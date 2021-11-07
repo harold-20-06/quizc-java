@@ -1,7 +1,7 @@
 package org.fundacionjala.app.quizz.console;
 
 import java.util.Set;
-
+import java.util.Scanner;
 import org.fundacionjala.app.quizz.model.Answer;
 import org.fundacionjala.app.quizz.model.Question;
 import org.fundacionjala.app.quizz.model.Quiz;
@@ -29,7 +29,7 @@ public class QuizUIHandler {
 	}
 
 	public static void showQuiz(QuizAnswers quizAnswers) {
-		System.out.println(quizAnswers.getQuiz().getTitle());
+		/*System.out.println(quizAnswers.getQuiz().getTitle());
 		System.out.println("=============================================");
 
 		for (Answer answer : quizAnswers.getAnswers()) {
@@ -38,6 +38,19 @@ public class QuizUIHandler {
 
 		System.out.println("=============================================");
 		System.out.println("Press ENTER to continue");
-		InputReader.readLine();
+		InputReader.readLine();*/
+		System.out.println("\n       " + quizAnswers.getQuiz().getTitle());
+		System.out.println("=============================================");
+
+		int i = 1;
+		for (Answer answer : quizAnswers.getAnswers()) {
+			System.out.println(i + ".- " + answer);
+		    i++; //borrar este mensaje
+		}
+
+		System.out.println("=============================================");
+		Scanner in = new Scanner(System.in);
+		System.out.println("Press ENTER to continue");
+		in.nextLine();
 	}
 }
